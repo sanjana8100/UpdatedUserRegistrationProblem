@@ -52,5 +52,12 @@ public class UserRegistration {
         Pattern passwordPattern = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])[!@#$%^&*?A-Z+a-z0-9]{8,}$");
         Matcher passwordMatcher = passwordPattern.matcher(password);
         isValid(passwordMatcher);
+
+        System.out.println("Enter Sample Email:");
+        String sEmail = in.next();
+
+        Pattern sampleEmailPattern = Pattern.compile("^[0-9a-zA-Z]+([+.-]([a-z0-9A-Z]+))*[@][a-zA-Z0-9]+[.][a-z]{2,4}[,]?([.][a-z]{2,4})?$");
+        Matcher sampleEmailMatcher = sampleEmailPattern.matcher(sEmail);
+        isValid(sampleEmailMatcher);
     }
 }
