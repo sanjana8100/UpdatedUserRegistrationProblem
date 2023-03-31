@@ -17,19 +17,26 @@ public class UserRegistration {
     public static void main(String[] args) {
         System.out.println("----------User Registration----------");
 
-        Scanner sc = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
         System.out.print("Enter First Name: ");
-        String firstName = sc.next();
+        String firstName = in.next();
 
         Pattern namePattern = Pattern.compile("^[A-Z]{1}[a-z]{3,}$");
         Matcher firstNameMatcher = namePattern.matcher(firstName);
         isValid(firstNameMatcher);
 
         System.out.print("\nEnter Last Name: ");
-        String lastName = sc.next();
+        String lastName = in.next();
 
         Matcher lastNameMatcher = namePattern.matcher(lastName);
         isValid(lastNameMatcher);
+
+        System.out.print("Enter Email Address: ");
+        String email = in.next();
+
+        Pattern emailPattern = Pattern.compile("^[0-9a-zA-Z]+([.]([a-z0-9A-Z]+))*[@][a-zA-Z]+[.][a-z]{2,4}([.][a-z]{2})?$");
+        Matcher emailMatcher = emailPattern.matcher(email);
+        isValid(emailMatcher);
     }
 }
