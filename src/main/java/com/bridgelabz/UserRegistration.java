@@ -26,7 +26,7 @@ public class UserRegistration {
         Matcher firstNameMatcher = namePattern.matcher(firstName);
         isValid(firstNameMatcher);
 
-        System.out.print("\nEnter Last Name: ");
+        System.out.print("Enter Last Name: ");
         String lastName = in.next();
 
         Matcher lastNameMatcher = namePattern.matcher(lastName);
@@ -49,7 +49,7 @@ public class UserRegistration {
         System.out.print("Enter Password: ");
         String password = in.next();
 
-        Pattern passwordPattern = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])[A-Z+a-z0-9]{8,}$");
+        Pattern passwordPattern = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*?])[!@#$%^&*?A-Z+a-z0-9]{8,}$");
         Matcher passwordMatcher = passwordPattern.matcher(password);
         isValid(passwordMatcher);
     }
