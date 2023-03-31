@@ -38,5 +38,12 @@ public class UserRegistration {
         Pattern emailPattern = Pattern.compile("^[0-9a-zA-Z]+([.]([a-z0-9A-Z]+))*[@][a-zA-Z]+[.][a-z]{2,4}([.][a-z]{2})?$");
         Matcher emailMatcher = emailPattern.matcher(email);
         isValid(emailMatcher);
+
+        System.out.print("Enter Phone Number: ");
+        String phoneNumber = in.next();
+
+        Pattern phoneNoPattern = Pattern.compile("^[0-9]{2}[0-9]{10}$");
+        Matcher phoneNoMatcher = phoneNoPattern.matcher(phoneNumber);
+        isValid(phoneNoMatcher);
     }
 }
