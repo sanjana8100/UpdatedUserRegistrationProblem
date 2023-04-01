@@ -42,4 +42,16 @@ public class UserRegistrationTest {
         Assertions.assertTrue(Password);
         System.out.println("Password Checked(Rule1, Rule2, Rule3 & Rule4) :- Successfully Passed UC5,UC6,UC7,UC8");
     }
+
+    @Test
+    void checkEmailShouldReturnTrue(){
+        String[] array = {"abc@yahoo.com","abc@yahoo.com","abc-100@yahoo.com","abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com","abc@yahoo.com"};
+        for(int i=0 ; i<array.length ; i++)
+        {
+            boolean email = userRegistration.validateEmail(array[i]);
+            Assertions.assertTrue(email);
+            System.out.println(i+1+") Email sample Checked");
+        }
+        System.out.println("All test case successfully Passed!!!!");
+    }
 }
