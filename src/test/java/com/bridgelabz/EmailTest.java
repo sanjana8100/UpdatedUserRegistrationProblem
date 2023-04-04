@@ -53,7 +53,7 @@ public class EmailTest {
         });
     }
     @Test
-    public void testEmail(){
+    public void testEmail() throws InvalidDetailsException {
         System.out.println("Parameterized Sample Email is: "+email);
         boolean actualValue= userRegistration.validateEmail(email);
         Assert.assertEquals(expectedResult,actualValue);
